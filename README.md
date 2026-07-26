@@ -8,8 +8,6 @@ It does not establish that any commercial system is vulnerable. It does not clai
 
 [Open the live Saturation Explorer](https://chaffmem-lab-pxnkit.brahmkhatripankit.chatgpt.site)
 
-![ChaffMem Lab interface preview](public/og.png)
-
 ## Five-minute CPU quick start
 
 The default path uses deterministic feature hashing and requires no model download, API key, private dataset, or GPU.
