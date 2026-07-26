@@ -1,0 +1,76 @@
+schema_version: "1.0"
+experiment:
+  name: cpu-smoke
+  description: Deterministic single-seed validation of target availability under bounded benign traffic
+  seed: 17
+  repetitions: 1
+  domains:
+    - travel
+  fixture_path: data/fixtures/benign_records.json
+
+embedding:
+  backend: feature_hash
+  dimensions: 128
+  seed: 17
+  normalize: true
+
+memory:
+  policy: fifo
+  capacity: 16
+  pin_target: false
+
+retrieval:
+  mode: cosine
+  top_k: 4
+  candidate_budget: 16
+  tie_breaker: record_id
+
+traffic:
+  strategy: same_domain
+  write_budget: 24
+  interval_steps: 1
+  knowledge: target_domain
+  origins:
+    - fixture-a
+    - fixture-b
+
+defense:
+  strategy: none
+  duplicate_threshold: 0.98
+  per_origin_quota: 8
+  criticality_floor: 0.8
+
+canary:
+  enabled: true
+  evaluate_every: 2
+  target_record_id: travel-critical-001
+  query: Which terminal and time apply to the confirmed Berlin departure
+  minimum_rank: 4
+  minimum_margin: -0.05
+
+decision:
+  mode: symbolic
+  required_record_id: travel-critical-001
+
+output:
+  root: artifacts/runs
+  formats:
+    - json
+    - csv
+    - html
+  write_snapshot: true
+  write_trace: true
+
+comparison_arms:
+  - name: undefended
+    memory_policy: fifo
+    defense_strategy: none
+  - name: defended
+    memory_policy: hybrid
+    defense_strategy: canary_guided
+  - name: unlimited-capacity-upper-bound
+    capacity_multiplier: 4
+    defense_strategy: none
+  - name: pinned-oracle-upper-bound
+    memory_policy: fifo
+    pin_target: true

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ChaffMem Lab report run-8b8b3e56d090679e8450</title>
+  <style>
+    body { max-width: 900px; margin: 40px auto; padding: 0 20px;
+      font: 16px/1.55 system-ui; color: #18201d; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border-bottom: 1px solid #d8ddd9; padding: 10px; text-align: left; }
+    pre { overflow: auto; background: #f2f3ef; padding: 16px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <h1>ChaffMem Lab run report</h1>
+  <p><strong>Run:</strong> run-8b8b3e56d090679e8450</p>
+  <p><strong>Trace digest:</strong> <code>537017b5d1514a4b9f31c713d903da14269f073f6cafd603a8bcfbcecdd77b39</code></p>
+  <h2>Summary</h2>
+  <table>
+    <tr><th>Critical Recall@k</th><td>0.160</td></tr>
+    <tr><th>Physical availability</th><td>0.480</td></tr>
+    <tr><th>Behavioral availability</th><td>0.160</td></tr>
+    <tr><th>Benign utility</th><td>0.520</td></tr>
+    <tr><th>Writes to first failure</th><td>4</td></tr>
+    <tr><th>Accepted writes</th><td>24</td></tr>
+    <tr><th>Rejected writes</th><td>0</td></tr>
+  </table>
+  <p>The canary warning score is deterministic and is not a calibrated probability.</p>
+  <h2>Trajectory</h2>
+  <img src="figure.svg" alt="Availability trajectory">
+  <h2>Normalized configuration</h2>
+  <pre>{
+  &quot;attack&quot;: &quot;semantic_nearest&quot;,
+  &quot;background_records&quot;: 10,
+  &quot;budget&quot;: 24,
+  &quot;canary_threshold&quot;: 0.58,
+  &quot;capacity&quot;: 16,
+  &quot;criticality_threshold&quot;: 0.8,
+  &quot;defense&quot;: &quot;none&quot;,
+  &quot;domain&quot;: &quot;travel&quot;,
+  &quot;embedding_dim&quot;: 128,
+  &quot;experiment_id&quot;: &quot;reference-semantic-nearest&quot;,
+  &quot;knowledge&quot;: &quot;query&quot;,
+  &quot;origin_quota&quot;: 8,
+  &quot;policy&quot;: &quot;fifo&quot;,
+  &quot;quick&quot;: true,
+  &quot;schema_version&quot;: &quot;1.0&quot;,
+  &quot;seed&quot;: 17,
+  &quot;semantic_cell_quota&quot;: 4,
+  &quot;top_k&quot;: 4
+}</pre>
+</body>
+</html>

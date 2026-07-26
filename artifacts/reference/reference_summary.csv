@@ -1,0 +1,6 @@
+arm,run_id,trace_digest,critical_recall,physical_availability,behavioral_availability,benign_utility,final_target_rank,writes_to_failure,accepted_writes,rejected_writes,peak_alert_score
+matched-benign,run-d61baa978f649a7cf39d,337d5e59c1a1acab5642c8c0e7d6df67116e3ed489bc0ffd6401b60c1adcc87f,0.48,0.48,0.48,0.52,,12,24,0,0.99
+random,run-9958b107fb430da8763c,cdee7d9e85c3abbd1516b05ed1acffc6e28fb3a766f01cc4a7bc36a205a4e8c0,0.48,0.48,0.48,0.52,,12,24,0,0.99
+semantic-nearest,run-8b8b3e56d090679e8450,537017b5d1514a4b9f31c713d903da14269f073f6cafd603a8bcfbcecdd77b39,0.16,0.48,0.16,0.52,,4,24,0,0.99
+adaptive-admission,run-56b5a14b7276b514c9fd,4fb5d04f2c355139a6cf449aaf8ab309ef626314186596944585761f393e361b,1.0,1.0,1.0,1.0,2,,1,23,0.215
+pinned-storage-oracle-control,run-dae449677044af969b04,e3d966bc05dcb58a347adb02a405e29df864d00ab6ec563a60bd5e2452d2f55b,0.16,1.0,0.16,0.48,16,4,24,0,0.99

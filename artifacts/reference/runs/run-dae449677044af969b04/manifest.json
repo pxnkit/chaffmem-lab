@@ -1,0 +1,53 @@
+{
+  "config": {
+    "attack": "semantic_nearest",
+    "background_records": 10,
+    "budget": 24,
+    "canary_threshold": 0.58,
+    "capacity": 16,
+    "criticality_threshold": 0.8,
+    "defense": "oracle_pin",
+    "domain": "travel",
+    "embedding_dim": 128,
+    "experiment_id": "reference-pinned-storage-oracle-control",
+    "knowledge": "query",
+    "origin_quota": 8,
+    "policy": "fifo",
+    "quick": true,
+    "schema_version": "1.0",
+    "seed": 17,
+    "semantic_cell_quota": 4,
+    "top_k": 4
+  },
+  "environment": {
+    "architecture": "AMD64",
+    "dependencies": {
+      "PyYAML": "6.0.3",
+      "fastapi": "0.116.1",
+      "numpy": "2.3.5",
+      "pydantic": "2.11.7",
+      "uvicorn": "0.35.0"
+    },
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.13",
+    "source_tree_sha256": "c81301fa9a0da498278a375d964edd9948cb71636327e42044aa62c32bc9505b"
+  },
+  "files": {
+    "figure.svg": "9b7b16a2fc70c28dafa384b5fbc4c2e76e40c6b07de6d0883954d2c71daaccbd",
+    "metrics.csv": "7a9fe8b9ca632818b1831a9a7e33858dbeca397f4e4a00db4ba2856fb220cd88",
+    "report.html": "1fa6dd03dff0710a48c85853a3f1146df92e75a1656f00432780c10e0888078b",
+    "result.json": "a9ac3123402055e67058a0f494ebedcbb335e7da5bbe50cce48149cbfadbdb69",
+    "snapshot.json": "41225d6220b46ed1ac63edebce24e4bd0b035b85c624000a51bd927f8f2ba89c",
+    "summary.md": "cf3860b80bcd85ed1f8b8abd31705f84e98059410ad12e959c1b414469d93119",
+    "trace.jsonl": "472c0bab1972b9c3eb38375a8cd85da4d551c0c1d6ae9367d5f6c26eff6e5003"
+  },
+  "fixture": {
+    "id": "chaffmem-benign-multidomain-v1",
+    "path": "data\\fixtures\\benign_records.json",
+    "sha256": "c3b157ce55124909bb075b0bf7e1c5f0450aac401e7ae2dacb683ed3a81ad24f"
+  },
+  "generated_at": "2026-07-26T11:25:18.584354+00:00",
+  "result_digest": "e3d966bc05dcb58a347adb02a405e29df864d00ab6ec563a60bd5e2452d2f55b",
+  "run_id": "run-dae449677044af969b04",
+  "schema_version": "1.0"
+}

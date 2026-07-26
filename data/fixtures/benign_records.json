@@ -1,0 +1,241 @@
+{
+  "schema_version": "1.0",
+  "fixture_id": "chaffmem-benign-multidomain-v1",
+  "license": "CC0-1.0",
+  "provenance": {
+    "source": "Original synthetic text created specifically for ChaffMem Lab",
+    "external_corpus": false,
+    "model_assisted": true
+  },
+  "audit": {
+    "review_status": "approved",
+    "allowed_content": [
+      "ordinary factual notes",
+      "scheduling details",
+      "neutral preferences",
+      "non-actionable reminders"
+    ],
+    "excluded_content": [
+      "instructions to an agent",
+      "executable code",
+      "credentials or secrets",
+      "requests to alter another record",
+      "medical diagnosis or treatment advice",
+      "claims about real people or organizations"
+    ]
+  },
+  "scenarios": [
+    {
+      "domain": "travel",
+      "target_record_id": "travel-critical-001",
+      "canary_query": "Which terminal and time apply to the confirmed Berlin departure",
+      "expected_terms": ["Terminal 1", "07:40"],
+      "records": [
+        {
+          "record_id": "travel-critical-001",
+          "text": "The confirmed Berlin departure uses Terminal 1 and check-in closes at 07:40.",
+          "origin": "itinerary",
+          "importance": 1.0,
+          "critical": true,
+          "created_step": 0,
+          "tags": ["berlin", "departure", "terminal", "check-in"]
+        },
+        {
+          "record_id": "travel-benign-002",
+          "text": "The airport observation deck opens in the late morning on weekdays.",
+          "origin": "fixture-a",
+          "importance": 0.25,
+          "critical": false,
+          "created_step": 1,
+          "tags": ["airport", "observation"]
+        },
+        {
+          "record_id": "travel-benign-003",
+          "text": "A regional rail ticket can cover several local transit zones.",
+          "origin": "fixture-b",
+          "importance": 0.3,
+          "critical": false,
+          "created_step": 2,
+          "tags": ["rail", "transit", "zones"]
+        },
+        {
+          "record_id": "travel-benign-004",
+          "text": "The blue suitcase has a fabric identification strap on its side handle.",
+          "origin": "fixture-a",
+          "importance": 0.2,
+          "critical": false,
+          "created_step": 3,
+          "tags": ["luggage", "identification"]
+        },
+        {
+          "record_id": "travel-benign-005",
+          "text": "The museum district is quieter before the usual lunch period.",
+          "origin": "fixture-b",
+          "importance": 0.2,
+          "critical": false,
+          "created_step": 4,
+          "tags": ["museum", "schedule"]
+        }
+      ]
+    },
+    {
+      "domain": "healthcare",
+      "target_record_id": "healthcare-critical-001",
+      "canary_query": "What time is the confirmed clinic appointment and where is reception",
+      "expected_terms": ["14:20", "second floor"],
+      "records": [
+        {
+          "record_id": "healthcare-critical-001",
+          "text": "The confirmed clinic appointment begins at 14:20 and reception is on the second floor.",
+          "origin": "appointment",
+          "importance": 1.0,
+          "critical": true,
+          "created_step": 0,
+          "tags": ["clinic", "appointment", "reception"]
+        },
+        {
+          "record_id": "healthcare-benign-002",
+          "text": "The clinic waiting room has a water dispenser near the window.",
+          "origin": "fixture-a",
+          "importance": 0.2,
+          "critical": false,
+          "created_step": 1,
+          "tags": ["clinic", "waiting-room"]
+        },
+        {
+          "record_id": "healthcare-benign-003",
+          "text": "The patient information leaflet is available in several languages.",
+          "origin": "fixture-b",
+          "importance": 0.25,
+          "critical": false,
+          "created_step": 2,
+          "tags": ["leaflet", "languages"]
+        },
+        {
+          "record_id": "healthcare-benign-004",
+          "text": "A quiet seating area is located beside the main corridor.",
+          "origin": "fixture-a",
+          "importance": 0.2,
+          "critical": false,
+          "created_step": 3,
+          "tags": ["seating", "corridor"]
+        },
+        {
+          "record_id": "healthcare-benign-005",
+          "text": "The front desk provides printed maps of the building.",
+          "origin": "fixture-b",
+          "importance": 0.2,
+          "critical": false,
+          "created_step": 4,
+          "tags": ["front-desk", "map"]
+        }
+      ]
+    },
+    {
+      "domain": "operations",
+      "target_record_id": "operations-critical-001",
+      "canary_query": "Which loading bay and time window are confirmed for the priority shipment",
+      "expected_terms": ["Bay C", "09:10"],
+      "records": [
+        {
+          "record_id": "operations-critical-001",
+          "text": "The priority shipment is assigned to Bay C for the confirmed 09:10 receiving window.",
+          "origin": "dispatch",
+          "importance": 1.0,
+          "critical": true,
+          "created_step": 0,
+          "tags": ["shipment", "bay", "receiving"]
+        },
+        {
+          "record_id": "operations-benign-002",
+          "text": "Reusable pallets are stacked along the marked storage wall.",
+          "origin": "fixture-a",
+          "importance": 0.25,
+          "critical": false,
+          "created_step": 1,
+          "tags": ["pallets", "storage"]
+        },
+        {
+          "record_id": "operations-benign-003",
+          "text": "The afternoon inventory count covers the west shelving area.",
+          "origin": "fixture-b",
+          "importance": 0.3,
+          "critical": false,
+          "created_step": 2,
+          "tags": ["inventory", "shelving"]
+        },
+        {
+          "record_id": "operations-benign-004",
+          "text": "The packing station keeps spare labels in the upper drawer.",
+          "origin": "fixture-a",
+          "importance": 0.2,
+          "critical": false,
+          "created_step": 3,
+          "tags": ["packing", "labels"]
+        },
+        {
+          "record_id": "operations-benign-005",
+          "text": "A maintenance checklist is posted beside the equipment cabinet.",
+          "origin": "fixture-b",
+          "importance": 0.2,
+          "critical": false,
+          "created_step": 4,
+          "tags": ["maintenance", "checklist"]
+        }
+      ]
+    },
+    {
+      "domain": "finance",
+      "target_record_id": "finance-critical-001",
+      "canary_query": "What date and reference apply to the confirmed internal budget review",
+      "expected_terms": ["18 September", "BR-204"],
+      "records": [
+        {
+          "record_id": "finance-critical-001",
+          "text": "The confirmed internal budget review is scheduled for 18 September under reference BR-204.",
+          "origin": "calendar",
+          "importance": 1.0,
+          "critical": true,
+          "created_step": 0,
+          "tags": ["budget", "review", "reference"]
+        },
+        {
+          "record_id": "finance-benign-002",
+          "text": "The quarterly spreadsheet uses separate tabs for each cost center.",
+          "origin": "fixture-a",
+          "importance": 0.25,
+          "critical": false,
+          "created_step": 1,
+          "tags": ["spreadsheet", "cost-center"]
+        },
+        {
+          "record_id": "finance-benign-003",
+          "text": "Archived receipts are grouped by month in the shared index.",
+          "origin": "fixture-b",
+          "importance": 0.25,
+          "critical": false,
+          "created_step": 2,
+          "tags": ["receipts", "archive"]
+        },
+        {
+          "record_id": "finance-benign-004",
+          "text": "The planning workbook displays whole currency units in summary views.",
+          "origin": "fixture-a",
+          "importance": 0.2,
+          "critical": false,
+          "created_step": 3,
+          "tags": ["planning", "workbook", "summary"]
+        },
+        {
+          "record_id": "finance-benign-005",
+          "text": "A neutral gray cover identifies the current reporting binder.",
+          "origin": "fixture-b",
+          "importance": 0.2,
+          "critical": false,
+          "created_step": 4,
+          "tags": ["reporting", "binder"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+schema_version: "1.0"
+experiment:
+  name: matched-availability-study
+  description: Multi-domain matched comparison for a publication-oriented local study
+  seeds:
+    - 11
+    - 23
+    - 47
+    - 71
+    - 101
+  repetitions: 5
+  domains:
+    - travel
+    - healthcare
+    - operations
+    - finance
+  fixture_path: data/fixtures/benign_records.json
+
+embedding:
+  backend: feature_hash
+  dimensions: 256
+  seed: 991
+  normalize: true
+
+memory:
+  policies:
+    - fifo
+    - lru
+    - reservoir
+    - importance
+    - diversity
+    - hybrid
+  capacities:
+    - 16
+    - 32
+    - 64
+  pin_target: false
+
+retrieval:
+  mode: cosine
+  top_k_values:
+    - 1
+    - 4
+    - 8
+  candidate_budget: 64
+  tie_breaker: record_id
+
+traffic:
+  strategies:
+    - matched_benign
+    - random
+    - same_domain
+    - semantic
+    - diverse
+    - multi_origin
+    - adaptive
+  write_budgets:
+    - 16
+    - 32
+    - 64
+  interval_steps: 1
+  knowledge_conditions:
+    - domain_only
+    - query_known
+  origins:
+    - fixture-a
+    - fixture-b
+    - fixture-c
+    - fixture-d
+
+defense:
+  strategies:
+    - none
+    - duplicate_control
+    - origin_quota
+    - semantic_coverage
+    - criticality_retention
+    - canary_guided
+  duplicate_threshold: 0.96
+  per_origin_quota: 12
+  criticality_floor: 0.75
+
+canary:
+  enabled: true
+  evaluate_every: 4
+  minimum_rank: 8
+  minimum_margin: -0.08
+
+decision:
+  mode: symbolic
+
+statistics:
+  confidence_level: 0.95
+  bootstrap_samples: 2000
+  paired_by:
+    - seed
+    - domain
+    - capacity
+    - top_k
+
+output:
+  root: artifacts/runs
+  formats:
+    - json
+    - csv
+    - html
+  write_snapshot: true
+  write_trace: true
+  write_manifest: true
+
+comparison_arms:
+  - name: undefended
+    defense_strategy: none
+  - name: selected-defense
+    defense_strategy: canary_guided
+  - name: unlimited-capacity-upper-bound
+    capacity_multiplier: 8
+    defense_strategy: none
+  - name: pinned-oracle-upper-bound
+    pin_target: true

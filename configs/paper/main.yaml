@@ -1,0 +1,73 @@
+schema_version: "1.0"
+experiment:
+  name: publication-study-template
+  description: Multi-domain study declaration that requires explicit execution and review
+  seeds:
+    - 11
+    - 23
+    - 47
+    - 71
+    - 101
+  domains:
+    - travel
+    - healthcare
+    - operations
+    - finance
+
+embedding:
+  backend: feature_hash
+  dimensions: 256
+  seed: 991
+
+memory:
+  policies:
+    - fifo
+    - lru
+    - reservoir
+    - importance
+    - mmr
+    - hybrid
+  capacities:
+    - 16
+    - 32
+    - 64
+
+retrieval:
+  top_k_values:
+    - 1
+    - 4
+    - 8
+
+traffic:
+  strategies:
+    - matched_benign
+    - random
+    - same_domain
+    - semantic
+    - diverse
+    - multi_origin
+    - adaptive
+  write_budgets:
+    - 16
+    - 32
+    - 64
+  knowledge_conditions:
+    - domain_only
+    - query_known
+
+defense:
+  strategies:
+    - none
+    - duplicate_control
+    - origin_quota
+    - semantic_coverage
+    - criticality_retention
+    - canary_guided
+  per_origin_quota: 12
+  criticality_floor: 0.75
+
+output:
+  root: artifacts/runs
+  write_snapshot: true
+  write_trace: true
+  write_manifest: true

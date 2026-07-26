@@ -1,0 +1,76 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "chaffmem-lab"
+version = "0.2.0"
+description = "Deterministic research tooling for bounded memory availability experiments"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+license = { text = "MIT" }
+authors = [{ name = "ChaffMem Lab contributors" }]
+keywords = ["agent-memory", "retrieval", "reproducibility", "defensive-research"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+  "fastapi==0.116.1",
+  "numpy==2.3.2",
+  "pydantic==2.11.7",
+  "PyYAML==6.0.2",
+  "uvicorn[standard]==0.35.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "mypy==1.17.1",
+  "pytest==8.4.1",
+  "pytest-cov==6.2.1",
+  "ruff==0.12.7",
+]
+
+[project.scripts]
+chaffmem = "chaffmem.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/chaffmem"]
+
+[tool.pytest.ini_options]
+addopts = "--strict-config --strict-markers --cov=chaffmem --cov-report=term-missing"
+testpaths = ["tests/python"]
+
+[tool.coverage.run]
+branch = true
+source = ["chaffmem"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+fail_under = 90
+exclude_also = [
+  "if TYPE_CHECKING:",
+  "if __name__ == .__main__.:",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["src", "tests/python"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+packages = ["chaffmem"]
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = ["yaml", "yaml.*"]
+ignore_missing_imports = true

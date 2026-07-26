@@ -1,0 +1,53 @@
+{
+  "config": {
+    "attack": "semantic_nearest",
+    "background_records": 10,
+    "budget": 24,
+    "canary_threshold": 0.1,
+    "capacity": 16,
+    "criticality_threshold": 0.8,
+    "defense": "adaptive",
+    "domain": "travel",
+    "embedding_dim": 128,
+    "experiment_id": "reference-adaptive-admission",
+    "knowledge": "query",
+    "origin_quota": 8,
+    "policy": "fifo",
+    "quick": true,
+    "schema_version": "1.0",
+    "seed": 17,
+    "semantic_cell_quota": 1,
+    "top_k": 4
+  },
+  "environment": {
+    "architecture": "AMD64",
+    "dependencies": {
+      "PyYAML": "6.0.3",
+      "fastapi": "0.116.1",
+      "numpy": "2.3.5",
+      "pydantic": "2.11.7",
+      "uvicorn": "0.35.0"
+    },
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.13",
+    "source_tree_sha256": "c81301fa9a0da498278a375d964edd9948cb71636327e42044aa62c32bc9505b"
+  },
+  "files": {
+    "figure.svg": "5d22acd1aa30f76dba16e48e9d335242df4d8e3ca02666cd30dc689ee969ccce",
+    "metrics.csv": "b4f32e2de637a6789bf07cc9b4f4d6a21c1213daff1b0c317f09b27bb372c965",
+    "report.html": "93344a4767a381e84b28c54b760655746ded6122513269b94e08a2eb0efafa78",
+    "result.json": "5a7bd1846fed9184268302786840647f4b56f477254bec7fce0cea79072986cb",
+    "snapshot.json": "10a91e24e01e35224082904bf9d87ab9be1b439fe784c5425461833c86fb07ad",
+    "summary.md": "0c52fe81aad52b8bdbb24295ac7373211cb94a23ebb750050f2beefc993427a8",
+    "trace.jsonl": "cbf2ac24d7599da4e421d8ffedc5dd35e2959e829ad64b38ac58a25184f9ae7e"
+  },
+  "fixture": {
+    "id": "chaffmem-benign-multidomain-v1",
+    "path": "data\\fixtures\\benign_records.json",
+    "sha256": "c3b157ce55124909bb075b0bf7e1c5f0450aac401e7ae2dacb683ed3a81ad24f"
+  },
+  "generated_at": "2026-07-26T11:25:18.045066+00:00",
+  "result_digest": "4fb5d04f2c355139a6cf449aaf8ab309ef626314186596944585761f393e361b",
+  "run_id": "run-56b5a14b7276b514c9fd",
+  "schema_version": "1.0"
+}

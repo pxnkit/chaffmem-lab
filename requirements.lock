@@ -1,0 +1,13 @@
+# Direct runtime dependencies for reproducible CPU-only installs
+# Generated from pyproject.toml. Transitive resolution is delegated to pip.
+fastapi==0.116.1
+numpy==2.3.2
+pydantic==2.11.7
+PyYAML==6.0.2
+uvicorn[standard]==0.35.0
+
+# Development and verification
+mypy==1.17.1
+pytest==8.4.1
+pytest-cov==6.2.1
+ruff==0.12.7

@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software artifact, cite the repository and the exact release."
+title: "ChaffMem Lab"
+type: software
+authors:
+  - name: "pxnkit"
+repository-code: "https://github.com/pxnkit/chaffmem-lab"
+url: "https://github.com/pxnkit/chaffmem-lab"
+license: MIT
+version: 0.2.0
+date-released: 2026-07-26
+keywords:
+  - agent memory
+  - memory availability
+  - retrieval evaluation
+  - defensive research
+  - reproducibility
