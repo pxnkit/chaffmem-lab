@@ -6,7 +6,7 @@ This repository is a working research prototype. It includes a deterministic Pyt
 
 It does not establish that any commercial system is vulnerable. It does not claim a new state of the art result. Full cross-domain benchmarks and statistical conclusions remain open research work.
 
-[Open the live Saturation Explorer](LIVE_DEMO_URL)
+[Open the live Saturation Explorer](https://chaffmem-lab-pxnkit.brahmkhatripankit.chatgpt.site)
 
 ![ChaffMem Lab interface preview](public/og.png)
 

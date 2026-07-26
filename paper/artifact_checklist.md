@@ -8,7 +8,7 @@
 - [x] Contribution guide
 - [x] CPU-only default path
 - [x] No required secret
-- [ ] Public release tag
+- [x] Public release tag
 
 ## Reproducibility
 
