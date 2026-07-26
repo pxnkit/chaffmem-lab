@@ -7,7 +7,7 @@ authors:
 repository-code: "https://github.com/pxnkit/chaffmem-lab"
 url: "https://github.com/pxnkit/chaffmem-lab"
 license: MIT
-version: 0.2.0
+version: 0.2.1
 date-released: 2026-07-26
 keywords:
   - agent memory

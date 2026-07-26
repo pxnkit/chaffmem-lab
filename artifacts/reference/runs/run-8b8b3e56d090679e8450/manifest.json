@@ -30,7 +30,7 @@
     },
     "platform": "Windows-11-10.0.26200-SP0",
     "python": "3.12.13",
-    "source_tree_sha256": "c81301fa9a0da498278a375d964edd9948cb71636327e42044aa62c32bc9505b"
+    "source_tree_sha256": "80af903a828958a8289c4f709ed2a0fdc94ea26bfaf78b67b5c385612ff7beae"
   },
   "files": {
     "figure.svg": "f1d56c6e75be281ce7ea2475d88087c3727f56176335f7401c2e3e5bd6d5bc75",
@@ -46,7 +46,7 @@
     "path": "data\\fixtures\\benign_records.json",
     "sha256": "c3b157ce55124909bb075b0bf7e1c5f0450aac401e7ae2dacb683ed3a81ad24f"
   },
-  "generated_at": "2026-07-26T11:25:17.708547+00:00",
+  "generated_at": "2026-07-26T11:40:50.764924+00:00",
   "result_digest": "537017b5d1514a4b9f31c713d903da14269f073f6cafd603a8bcfbcecdd77b39",
   "run_id": "run-8b8b3e56d090679e8450",
   "schema_version": "1.0"

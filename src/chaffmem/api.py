@@ -63,7 +63,7 @@ def _catalog(enum_type: type[Any], descriptions: dict[Any, str] | None = None) -
 def create_app(artifact_root: str | Path | None = None) -> FastAPI:
     app = FastAPI(
         title="ChaffMem Lab API",
-        version="0.2.0",
+        version="0.2.1",
         description="Local deterministic memory availability research service",
     )
     resolved_artifact_root: str | Path
